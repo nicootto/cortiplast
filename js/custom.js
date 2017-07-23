@@ -19,9 +19,9 @@ $(function() {
 $(function() {
     var img =
         [
-            '/images/img1.jpg',
-            '/images/img2.jpg',
-            '/images/img3.jpg'
+            'https://github.com/nicootto/cortiplast/blob/master/images/img1.jpg?raw=true',
+            'https://github.com/nicootto/cortiplast/blob/master/images/img2.jpg?raw=true',
+            'https://github.com/nicootto/cortiplast/blob/master/images/img3.jpg?raw=true'
         ]
     var current = 0;
 
