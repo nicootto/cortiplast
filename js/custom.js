@@ -17,18 +17,28 @@ $(function() {
 })
 
 $(function() {
-    var img =
-        [
-            'https://github.com/nicootto/cortiplast/blob/master/images/img1.jpg?raw=true',
-            'https://github.com/nicootto/cortiplast/blob/master/images/img2.jpg?raw=true',
-            'https://github.com/nicootto/cortiplast/blob/master/images/img3.jpg?raw=true'
-        ]
-    var current = 0;
+    // Only for desktio divices.
+    if(document.documentElement.clientWidth > 640) {
+        var img =
+            [
+                'https://github.com/nicootto/cortiplast/blob/master/images/img1.jpg?raw=true',
+                'https://github.com/nicootto/cortiplast/blob/master/images/img2.jpg?raw=true',
+                'https://github.com/nicootto/cortiplast/blob/master/images/img3.jpg?raw=true'
+            ]
 
-    setInterval(switchImg, 5000);
+        // start preloading
+        for(i=0; i<3; i++)
+        {
+            console.log("cargo");
+             (new Image).src = img[i];
+        }
 
-    function switchImg (){
-        current = (current + 1) % 3;
-        $('#home').css("background-image", 'url(' + img[current] + ')');
+        setInterval(switchImg, 5000);
+
+        current = 0;
+        function switchImg (){
+            current = (current + 1) % 3;
+            $('#home').css("background-image", 'url(' + img[current] + ')');
+        };
     };
 });
